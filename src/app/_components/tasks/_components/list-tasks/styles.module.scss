@@ -8,6 +8,10 @@ $hover-card: rgba(247, 249, 253, 1);
     color: $text-color;
   }
 
+  .description {
+    text-align: center;
+  }
+
   .list {
     display: flex;
     flex-direction: column;
@@ -31,6 +35,12 @@ $hover-card: rgba(247, 249, 253, 1);
         box-shadow: 2px 2px 4px $shadow;
       }
 
+      p{
+        &.completed{
+          text-decoration: line-through;
+          color: $text-color;
+        }
+      }
 
       .card_content {
         display: flex;
