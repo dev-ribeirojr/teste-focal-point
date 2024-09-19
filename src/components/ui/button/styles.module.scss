@@ -1,0 +1,26 @@
+@import "../../../app/styles/colors.scss";
+
+.button {
+  color: $white;
+  background: linear-gradient(to left, $primary-400, $primary-600);
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  width: 100%;
+
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &.error {
+    background: linear-gradient(to left, $error-200, $error-400);
+  }
+
+  &.primary {
+    background: $primary-150;
+    color: $black;
+  }
+}
