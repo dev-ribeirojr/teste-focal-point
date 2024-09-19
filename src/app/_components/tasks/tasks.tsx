@@ -1,77 +1,21 @@
 'use client'
-import { Button } from '@/components/ui'
-import { ListTasks, NewTask } from './_components'
 import styles from './styles.module.scss'
-import { useState } from 'react'
-
-type StatusTaskProps = 'completed' | 'pending'
-
-export interface TaskProps {
-  id: number
-  status: StatusTaskProps
-  deleted: boolean
-  title: string
-  created_at: Date
-}
+import { Button } from '@/components/ui'
+import { ModalDeleteTask, ListTasks, ModalNewTask } from './_components'
+import { useTasks } from './hooks/use-tasks'
 
 export function Tasks() {
-  const tasks: TaskProps[] = [
-    {
-      id: 1,
-      status: 'pending',
-      deleted: false,
-      title: 'Lavar a louça',
-      created_at: new Date(),
-    },
-    {
-      id: 2,
-      status: 'pending',
-      deleted: false,
-      title: 'Lavar a louça',
-      created_at: new Date(),
-    },
-    {
-      id: 3,
-      status: 'pending',
-      deleted: false,
-      title: 'Lavar a louça',
-      created_at: new Date(),
-    },
-    {
-      id: 4,
-      status: 'completed',
-      deleted: false,
-      title: 'Lavar a louça',
-      created_at: new Date(),
-    },
-    {
-      id: 5,
-      status: 'completed',
-      deleted: false,
-      title: 'Lavar a louça',
-      created_at: new Date(),
-    },
-    {
-      id: 6,
-      status: 'completed',
-      deleted: false,
-      title: 'Lavar a louça',
-      created_at: new Date(),
-    },
-  ]
-
-  const tasksPending = tasks.filter((item) => item.status === 'pending')
-  const tasksCompleted = tasks.filter((item) => item.status === 'completed')
-
-  const [isVisibleModalNewTask, setIsVisibleModalNewTask] = useState(false)
-
-  function deleteTask(taskId: number) {
-    console.log(taskId)
-  }
-
-  function changeStatusTask(taskId: number) {
-    console.log(taskId)
-  }
+  const {
+    isVisibleModalNewTask,
+    tasksPending,
+    tasksCompleted,
+    taskId,
+    setTaskId,
+    removeTask,
+    updateTaskStatus,
+    setIsVisibleModalNewTask,
+    addTask,
+  } = useTasks()
 
   return (
     <>
@@ -80,23 +24,31 @@ export function Tasks() {
           <ListTasks
             title="Suas tarefas de hoje"
             tasks={tasksPending}
-            deleteTask={deleteTask}
-            changeStatusTask={changeStatusTask}
+            deleteTask={setTaskId}
+            changeStatusTask={updateTaskStatus}
+            status="pending"
           />
           <ListTasks
             title="Tarefas finalizadas"
             tasks={tasksCompleted}
-            deleteTask={deleteTask}
-            changeStatusTask={changeStatusTask}
+            deleteTask={setTaskId}
+            changeStatusTask={updateTaskStatus}
+            status="completed"
           />
         </div>
         <Button onClick={() => setIsVisibleModalNewTask(true)}>
           Adicionar nova tarefa
         </Button>
       </div>
-      <NewTask
+      <ModalNewTask
         open={isVisibleModalNewTask}
         close={() => setIsVisibleModalNewTask(false)}
+        addTask={addTask}
+      />
+      <ModalDeleteTask
+        open={!!taskId}
+        deleteTask={removeTask}
+        close={() => setTaskId(null)}
       />
     </>
   )
