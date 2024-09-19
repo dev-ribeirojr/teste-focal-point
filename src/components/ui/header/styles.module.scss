@@ -1,0 +1,42 @@
+@import "../../../app/styles/colors.scss";
+
+.header {
+  padding: 0.5rem;
+  padding: 1rem 1rem 0 1rem;
+
+  .content {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $primary-50;
+
+    h1 {
+      font-size: 1rem;
+    }
+
+    p {
+      color: $text-color;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+
+    .content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
