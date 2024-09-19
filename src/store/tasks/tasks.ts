@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { TaskProps, UpdateTaskStatusProps } from './types'
+import toast from 'react-hot-toast'
 
 interface UseStoreProps {
   state: {
@@ -33,6 +34,7 @@ const useTaskStore = create<UseStoreProps>((set) => ({
       }
       set((state) => {
         const updatedTasks = [...state.state.tasks, newTask]
+        toast.success('Tarefa criada com sucesso!')
         return update(updatedTasks)
       })
     },
@@ -41,6 +43,7 @@ const useTaskStore = create<UseStoreProps>((set) => ({
         const updatedTasks = state.state.tasks.map((task) =>
           task.id === taskId ? { ...task, deleted: true } : task,
         )
+        toast.success('Tarefa deletada com sucesso!')
         return update(updatedTasks)
       })
     },
@@ -49,6 +52,7 @@ const useTaskStore = create<UseStoreProps>((set) => ({
         const updatedTasks = state.state.tasks.map((task) =>
           task.id === taskId ? { ...task, status } : task,
         )
+        toast.success('Tarefa atualizada com sucesso!')
         return update(updatedTasks)
       })
     },
