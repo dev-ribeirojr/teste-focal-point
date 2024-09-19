@@ -12,7 +12,17 @@ body {
   height: 100%;
 }
 
+button {
+  cursor: pointer;
+}
+
 button,
 input {
   outline: none;
+  border: none;
+}
+
+ul,
+ol {
+  list-style: none;
 }
