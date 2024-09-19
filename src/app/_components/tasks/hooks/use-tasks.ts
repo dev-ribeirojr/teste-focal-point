@@ -11,7 +11,8 @@ export function useTasks() {
 
   useEffect(() => {
     getTasks()
-  }, [])
+    return () => getTasks()
+  }, [getTasks])
 
   const tasksPending = tasks.filter(
     (item) => item.status === 'pending' && !item.deleted,
