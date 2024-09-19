@@ -7,6 +7,7 @@
   .content {
     width: 100%;
     max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
@@ -16,6 +17,7 @@
 
     h1 {
       font-size: 1rem;
+
     }
 
     p {
@@ -33,9 +35,22 @@
       align-items: center;
       gap: 0.5rem;
 
+      .content_logo {
+        width: 100%;
+        max-width: 231px;
+      }
+
       h1 {
         font-size: 1.5rem;
         font-weight: 500;
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      p {
+        white-space: nowrap;
+        font-size: 14px;
       }
     }
   }
