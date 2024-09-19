@@ -1,1 +1,2 @@
-export { ListTasks } from './list-tasks'
+export * from './list-tasks'
+export * from './new-task'

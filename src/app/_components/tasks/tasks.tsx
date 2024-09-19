@@ -1,7 +1,8 @@
 'use client'
 import { Button } from '@/components/ui'
-import { ListTasks } from './_components'
+import { ListTasks, NewTask } from './_components'
 import styles from './styles.module.scss'
+import { useState } from 'react'
 
 type StatusTaskProps = 'completed' | 'pending'
 
@@ -62,6 +63,8 @@ export function Tasks() {
   const tasksPending = tasks.filter((item) => item.status === 'pending')
   const tasksCompleted = tasks.filter((item) => item.status === 'completed')
 
+  const [isVisibleModalNewTask, setIsVisibleModalNewTask] = useState(false)
+
   function deleteTask(taskId: number) {
     console.log(taskId)
   }
@@ -71,22 +74,30 @@ export function Tasks() {
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.container_tasks}>
-        <ListTasks
-          title="Suas tarefas de hoje"
-          tasks={tasksPending}
-          deleteTask={deleteTask}
-          changeStatusTask={changeStatusTask}
-        />
-        <ListTasks
-          title="Tarefas finalizadas"
-          tasks={tasksCompleted}
-          deleteTask={deleteTask}
-          changeStatusTask={changeStatusTask}
-        />
+    <>
+      <div className={styles.container}>
+        <div className={styles.container_tasks}>
+          <ListTasks
+            title="Suas tarefas de hoje"
+            tasks={tasksPending}
+            deleteTask={deleteTask}
+            changeStatusTask={changeStatusTask}
+          />
+          <ListTasks
+            title="Tarefas finalizadas"
+            tasks={tasksCompleted}
+            deleteTask={deleteTask}
+            changeStatusTask={changeStatusTask}
+          />
+        </div>
+        <Button onClick={() => setIsVisibleModalNewTask(true)}>
+          Adicionar nova tarefa
+        </Button>
       </div>
-      <Button>Adicionar nova tarefa</Button>
-    </div>
+      <NewTask
+        open={isVisibleModalNewTask}
+        close={() => setIsVisibleModalNewTask(false)}
+      />
+    </>
   )
 }
