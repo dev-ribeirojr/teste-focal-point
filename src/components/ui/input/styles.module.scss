@@ -1,0 +1,26 @@
+@import "../../../app/styles/colors.scss";
+
+.label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .input {
+    width: 100%;
+    border: 1px solid $primary-50;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+
+    transition: all 0.3s;
+
+    &.isFocused {
+      border-color: $primary-400;
+    }
+
+    &.isError {
+      border-color: $error-400;
+    }
+  }
+}
