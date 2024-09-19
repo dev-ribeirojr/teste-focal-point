@@ -1,0 +1,22 @@
+@import "../../../app/styles/colors.scss";
+
+.button {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 0.3rem;
+  border: solid 1px $primary-100;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1rem;
+
+  &.checked {
+    border-color: $primary-600;
+    color: $primary-600;
+    background: $primary-200;
+  }
+
+}
