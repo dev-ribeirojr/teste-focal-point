@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gerenciamento de Tarefas
 
-## Getting Started
+## Descrição
 
-First, run the development server:
+Este projeto é uma aplicação de gerenciamento de tarefas que permite aos usuários criar, excluir e marcar tarefas como concluídas. A aplicação também fornece feedback visual por meio de toasts para as ações realizadas.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Funcionalidades
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Criar Tarefas**
+- **Excluir Tarefas** 
+- **Concluír Tarefas**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Detalhes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Excluir Tarefa:** ao excluir uma tarefa é atualizado uma propriedade "deleted" que é um booleando, não excluindo de fato a tarefa, pois assim é possível um histórico.
+- **Feedback Visual:** Utilizei o React hot toast para informar o usuário sobre os resultados das ações.
 
-## Learn More
+## Tecnologias Utilizadas
 
-To learn more about Next.js, take a look at the following resources:
+- Next JS
+- TypeScript
+- Zustand
+- Sass SCSS
+- Local Storage
+- React Hot Toast
+- React Icons
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Observações
+  o nome no titulo e a data no header está fixo, então não se assuste!!!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Como rodar o projeto
 
-## Deploy on Vercel
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/dev-ribeirojr/teste-focal-point.git
+   
+2. Navegue até a pasta onde clonou o repositório e instale as dependências:
+   ```bash
+   npm install
+   
+3. Rode o projeto:
+   ```bash
+   npm run dev
+   
+4. Por padrão acesse em:
+   ```bash
+   [http://localhost:3000](http://localhost:3000)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
