@@ -1,2 +1,3 @@
 export * from './list-tasks'
-export * from './new-task'
+export * from './modal-new-task'
+export * from './modal-delete-task'
