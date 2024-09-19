@@ -1,28 +1,38 @@
 @import "../../styles/colors.scss";
 
 .container {
-  padding: 2rem;
-  border-radius: 1rem;
-  border: 1px solid $primary-50;
-  margin: 1rem;
-  
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-items: center;
+  padding: 1rem;
 
-  box-shadow: 2px 2px 6px $shadow;
+  .container_tasks {
+    width: 100%;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid $primary-50;
 
-  h2 {
-    font-size: 1rem;
-    font-weight: 400;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    box-shadow: 2px 2px 6px $shadow;
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 400;
+      text-align: center;
+    }
   }
 }
 
 @media screen and (min-width: 768px) {
   .container {
+
     width: 100%;
-    max-width: 450px;
-    margin: 1rem auto;
+    max-width: 482px;
+    margin: 0 auto;
+
   }
 }

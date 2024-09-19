@@ -1,4 +1,5 @@
 'use client'
+import { Button } from '@/components/ui'
 import { ListTasks } from './_components'
 import styles from './styles.module.scss'
 
@@ -71,18 +72,21 @@ export function Tasks() {
 
   return (
     <div className={styles.container}>
-      <ListTasks
-        title="Suas tarefas de hoje"
-        tasks={tasksPending}
-        deleteTask={deleteTask}
-        changeStatusTask={changeStatusTask}
-      />
-      <ListTasks
-        title="Tarefas finalizadas"
-        tasks={tasksCompleted}
-        deleteTask={deleteTask}
-        changeStatusTask={changeStatusTask}
-      />
+      <div className={styles.container_tasks}>
+        <ListTasks
+          title="Suas tarefas de hoje"
+          tasks={tasksPending}
+          deleteTask={deleteTask}
+          changeStatusTask={changeStatusTask}
+        />
+        <ListTasks
+          title="Tarefas finalizadas"
+          tasks={tasksCompleted}
+          deleteTask={deleteTask}
+          changeStatusTask={changeStatusTask}
+        />
+      </div>
+      <Button>Adicionar nova tarefa</Button>
     </div>
   )
 }
