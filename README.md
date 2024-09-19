@@ -43,6 +43,5 @@ Este projeto é uma aplicação de gerenciamento de tarefas que permite aos usu�
    npm run dev
    
 4. Por padrão acesse em:
-   ```bash
    [http://localhost:3000](http://localhost:3000)
 
