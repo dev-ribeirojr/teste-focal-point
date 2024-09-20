@@ -4,6 +4,8 @@
 
 Este projeto é uma aplicação de gerenciamento de tarefas que permite aos usuários criar, excluir e marcar tarefas como concluídas. A aplicação também fornece feedback visual por meio de toasts para as ações realizadas.
 
+Acesse em [clique aqui](https://teste-focal-point.vercel.app/)
+
 ## Funcionalidades
 
 - **Criar Tarefas**
